@@ -1,13 +1,13 @@
-// Import required modules
 import express from 'express';
-const { MongoClient, ServerApiVersion } = require('mongodb');
+import { MongoClient, ServerApiVersion } from 'mongodb';
+import 'dotenv/config';
+
 
 // Define connection details
-const MONGO_URI = "mongodb+srv://antohnw:gkvlIOXtcBFrc924@cluster0.mxs8tbo.mongodb.net/<your_database_name>?retryWrites=true&w=majority&appName=Cluster0";
 
 async function testConnection() {
     try {
-        const client = await MongoClient.connect(MONGO_URI, {
+        const client = await MongoClient.connect(process.env.MONGO_URI, {
             serverApi: {
                 version: ServerApiVersion.v1,
             },

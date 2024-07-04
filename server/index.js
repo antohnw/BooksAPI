@@ -23,17 +23,17 @@ async function connectToMongo() {
 connectToMongo();
 
 // Example route to retrieve all documents from a collection (replace with your logic)
-app.get('/api/books', async (req, res) => {
-    try {
-        const db = mongoose.connection.db; // Access the connected database
-        const booksCollection = db.collection('books'); // Access the "books" collection
-        const documents = await booksCollection.find().toArray();
-        res.json(documents);
-    } catch (err) {
-        console.error('Error retrieving data:', err);
-        res.status(500).send('Error retrieving data');
-    }
-});
+// app.get('/api/books', async (req, res) => {
+//     try {
+//         const db = mongoose.connection.db; // Access the connected database
+//         const booksCollection = db.collection('books'); // Access the "books" collection
+//         const documents = await booksCollection.find().toArray();
+//         res.json(documents);
+//     } catch (err) {
+//         console.error('Error retrieving data:', err);
+//         res.status(500).send('Error retrieving data');
+//     }
+// });
 
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
